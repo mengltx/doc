@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: crs
+  data:
+    mongodb:
+      #      uri: mongodb://127.0.0.1:27017/test  # 单实例
+      #      uri: mongodb://mongo1:27017,mongo2:27017,mongo3:27017/test?replcaSet=rs0&slaveOk=true  # 需要修改hosts
+      uri: mongodb://120.55.62.68:37017,120.55.62.68:47017,120.55.62.68:57017/doc?replcaSet=rs0&slaveOk=true&readPreference=primary
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/, classpath:/static/, classpath:/public/, file:/Users/poseture/images/
+
+
+
+  servlet:
+    multipart:
+      maxFileSize: 10MB
+logging:
+  level:
+    # 全局日志级别
+    root: info
+    # 指定包日志级别
+    #org.springframework.data.mongodb: DEBUG
+  #文件中日志样式
+  file: /var/crs.log
+  pattern:
+
+file:
+  path:
+    real: /Users/poseture/images/
+
+
+
+
+
+
