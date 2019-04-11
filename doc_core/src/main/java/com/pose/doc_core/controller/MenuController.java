@@ -50,4 +50,13 @@ public class MenuController {
     public Result findDirectory(){
         return  Result.Query(true,menuService.findDirectory());
     }
+
+
+    @PutMapping
+    public Result update(@RequestBody Menu menu){
+        return Result.execute(menuService.update(menu),null);
+    }
+
+
+
 }

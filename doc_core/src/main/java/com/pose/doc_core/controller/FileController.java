@@ -32,7 +32,10 @@ public class FileController {
 
         String newName = new ObjectId().toString()+suffixName;
 
+        System.out.println("-----------------"+DEFAULT_PATH+newName);
         File dest = new File(DEFAULT_PATH+newName);
+
+
 
         try {
             file.transferTo(dest);

@@ -10,6 +10,8 @@ public interface MenuService {
 
     Boolean delete(String id);
 
+    Boolean update(Menu menu);
+
     List<Menu> listAllMenus();
 
     List<Menu> menusTree();

@@ -35,7 +35,13 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public Boolean delete(String id) {
         menuRepository.deleteById(id);
-        return null;
+        return true;
+    }
+
+    @Override
+    public Boolean update(Menu menu) {
+        mongoTemplate.save(menu);
+        return true;
     }
 
     @Override
