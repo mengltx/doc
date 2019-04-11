@@ -18,6 +18,9 @@ public class FileController {
     @Value("${file.path.real}")
     private String  DEFAULT_PATH = "/tmp/image/";
 
+    @Value("${file.server.url}")
+    private String FILE_SERVER_URL = "120.55.62.68:8083/";
+
     @PostMapping(value = {"/image"})
     public String imageUpload(@RequestParam(value = "file") MultipartFile file){
         if(file.isEmpty()){
@@ -43,7 +46,7 @@ public class FileController {
             e.printStackTrace();
         }
 
-        return "doc-api/"+newName;
+        return FILE_SERVER_URL+newName;
 
     }
 }
